@@ -34,6 +34,7 @@
                                        $booking = \App\Booking::where([
                                            ['client_id',"=",$room->client_occupied_id],
                                            ['active',"=",1],
+                                           ['room_number','=',$room->number]
                                         ])->first();
                                    @endphp
                                    @if($client instanceof \App\Client && $booking instanceof \App\Booking)
@@ -42,6 +43,10 @@
                                        </div>
                                        @else
                                    @endif
+                                   @php
+                                       $client = null;
+                                       $booking = null;
+                                   @endphp
                                </a>
 
                             @endforeach

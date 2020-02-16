@@ -43,7 +43,7 @@
 }
 .room{
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
@@ -52,6 +52,7 @@
     cursor: pointer;
     transition-timing-function: ease-in-out;
     transition: 0.3s;
+    margin:1rem;
 }
 .room:hover{
     text-decoration: none;
