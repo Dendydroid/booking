@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Manage Bookings</div>
+                    <div class="card-header">Statistics</div>
 
                     <div class="card-body tabs-body">
                         @if (session('status'))
