@@ -1,0 +1,82 @@
+.tabs-body{
+    display: flex;
+    flex-flow: row;
+}
+.manage-tab{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    width:100%;
+    min-height:10rem;
+    margin:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+}
+.manage-tab:hover{
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.manage-tab:active{
+    box-shadow: 0 0 0 rgba(0,0,0,0.25), 0 0 0px rgba(0,0,0,0.22);
+    transition-timing-function: ease-in-out;
+    transition: 0.1s;
+}
+.manage-tab .tab-title{
+    color:rgba(0, 0, 0, 0.5);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.center-info{
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    color:rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    width:100%;
+}
+.room{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    flex-direction:column;
+    color:black;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+}
+.room:hover{
+    text-decoration: none;
+    color:black;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+}
+.room:active{
+    box-shadow: 0 0 0 rgba(0,0,0,0.25), 0 0 0px rgba(0,0,0,0.22);
+    transition-timing-function: ease-in-out;
+    transition: 0.1s;
+}
+.room .type{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color:rgba(0, 0, 0, 0.125);
+    width:100%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.room .number, .price, .occupied{
+    padding:0.5rem;
+}
+.client{
+    display:flex;
+    align-items: center;
+    padding:0.2rem
+}
