@@ -35,7 +35,7 @@
                                     <label for="price" class="col-md-4 col-form-label text-md-right">Ціна за ніч</label>
 
                                     <div class="col-md-6">
-                                        <input id="price" min="0" placeholder="$" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required>
+                                        <input id="price" min="0" placeholder="&#8372;" type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required>
 
                                         @error('price')
                                         <span class="invalid-feedback" role="alert">
