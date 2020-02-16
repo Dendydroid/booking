@@ -6,7 +6,7 @@
 
 In .conf file
 
-<VirtualHost *:80>
+"<VirtualHost *:80>
       <Directory `PATH-TO-YOUR-PROJECT`>
               Options Indexes FollowSymLinks MultiViews
               AllowOverride All
@@ -17,4 +17,4 @@ In .conf file
   ServerAdmin webmaster@localhost
   DocumentRoot `PATH-TO-YOUR-PROJECT`
 
-</VirtualHost>
+</VirtualHost>"
