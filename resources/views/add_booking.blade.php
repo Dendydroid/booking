@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Add Booking</div>
+                    <div class="card-header">Додати бронювання</div>
 
                     <div class="card-body ">
                         @if (session('status'))
@@ -18,7 +18,7 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="number" class="col-md-4 col-form-label text-md-right">Room Number</label>
+                                <label for="number" class="col-md-4 col-form-label text-md-right">Номер</label>
 
                                 <div class="col-md-6">
 
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nights" class="col-md-4 col-form-label text-md-right">Nights</label>
+                                <label for="nights" class="col-md-4 col-form-label text-md-right">Кількість ночей</label>
 
                                 <div class="col-md-6">
                                     <input id="nights" min="1" placeholder="1" type="nights" step="1" class="form-control @error('nights') is-invalid @enderror" name="nights" value="{{ old('nights') }}" required>
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="client" class="col-md-4 col-form-label text-md-right">Client</label>
+                                <label for="client" class="col-md-4 col-form-label text-md-right">Клієнт</label>
 
                                 <div class="col-md-6">
                                     <select name="client_id" id="client_id" class="form-control @error('client_id') is-invalid @enderror" required style="cursor: pointer">
@@ -75,7 +75,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Submit
+                                        Зберегти
                                     </button>
                                 </div>
                             </div>

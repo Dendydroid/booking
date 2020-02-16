@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Rooms Management</div>
+                    <div class="card-header">Керування номерами</div>
 
                     <div class="card-body tabs-body">
                         @if (session('status'))
@@ -17,17 +17,20 @@
 
                             @foreach($rooms as $room)
 
-                               <a class="room" href="/edit-room/{{$room->id}}">
+                               <a class="room" href="/edit-room/{{$room->id}}" style="min-width: 12rem">
                                    <div class="type">
                                        <div class="text-muted p-2">
-                                           {{($room->type == 1 ? "Conference Hall" : "Room")}}
+                                           {{($room->type == 1 ? "Конференц-зала" : "Номер")}}
                                        </div>
                                    </div>
                                    <div class="number" style="display: flex;align-items: center">
-                                       {{$room->number}}&nbsp;<small class="text-muted">{{$room->stars}}<span style="color:gold">&#9733;</span></small>
+                                       {{$room->number}}
+                                   </div>
+                                   <div>
+                                       &nbsp;Рівень комфорту: <small class="text-muted"><span style="color:goldenrod;font-weight: bold">{{$room->stars}}</span></small>
                                    </div>
                                    <div class="price">
-                                       {{$room->price}} <small style="color:darkgreen">$</small><small class="text-muted">&nbsp;/&nbsp;per night</small>
+                                       {{$room->price}} <small style="color:darkgreen">&#8372;</small><small class="text-muted">&nbsp;/&nbsp;за ніч</small>
                                    </div>
                                    @php
                                        $client = \App\Client::where('id',$room->client_occupied_id)->first();
@@ -39,7 +42,7 @@
                                    @endphp
                                    @if($client instanceof \App\Client && $booking instanceof \App\Booking)
                                        <div class="occupied small" style="color:darkred;text-align: center">
-                                           Occupied by {{$client->name}} <small class="text-muted">({{$client->phone}})</small>  <br>since <b>{{$booking->created_at}}</b><br>for <b>{{$booking->nights}}</b> nights
+                                           Зайнятий клієнтом {{$client->name}} <small class="text-muted">({{$client->phone}})</small>  <br>з <b>{{$booking->created_at}}</b><br>на <b>{{$booking->nights}}</b> ночей
                                        </div>
                                        @else
                                    @endif
@@ -52,7 +55,7 @@
                             @endforeach
                         @else
                             <p class="center-info">
-                                Room list is empty!
+                                Список номерів порожній!
                             </p>
                         @endif
 

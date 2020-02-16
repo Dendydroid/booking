@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Manage Bookings</div>
+                    <div class="card-header">Керувати бронюваннями</div>
 
                     <div class="card-body tabs-body">
                         @if (session('status'))
@@ -28,14 +28,14 @@
                                             {{$room->number}}&nbsp;<small class="text-muted">{{$room->stars}}<span style="color:gold">&#9733;</span></small>
                                         </div>
                                         <div class="price">
-                                            {{$room->price}} <small style="color:darkgreen">$</small><small class="text-muted">&nbsp;/&nbsp;per night</small>
+                                            {{$room->price}} <small style="color:darkgreen">&#8372;</small><small class="text-muted">&nbsp;/&nbsp;за ніч</small>
                                         </div>
                                         @php
                                             $client = \App\Client::where('id',$room->client_occupied_id)->first();
                                         @endphp
                                         @if($client instanceof \App\Client)
                                             <div class="occupied small" style="color:darkred">
-                                                Occupied by {{$client->name}}
+                                                Зайнятий клієнтом {{$client->name}}
                                             </div>
                                         @else
                                         @endif
@@ -44,7 +44,7 @@
                                 @endforeach
                             @else
                                 <p class="center-info">
-                                    Booking list is empty!
+                                    Список бронювань порожній!
                                 </p>
                             @endif
 

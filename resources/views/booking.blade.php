@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Rooms</div>
+                    <div class="card-header">Бронювання</div>
 
                     <div class="card-body tabs-body">
                         @if (session('status'))
@@ -16,7 +16,7 @@
 
                         <a class="manage-tab" href="{{route('add-booking')}}">
                             <div class="tab-title">
-                                Add Booking
+                                Додати бронювання
                             </div>
                         </a>
 

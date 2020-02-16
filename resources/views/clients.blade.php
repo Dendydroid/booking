@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" >
-                    <div class="card-header">Clients</div>
+                    <div class="card-header">Клієнти</div>
 
                     <div class="card-body tabs-body">
                         @if (session('status'))
@@ -16,13 +16,13 @@
 
                         <a class="manage-tab" href="{{route('add-client')}}">
                             <div class="tab-title">
-                                Add Client
+                                Додати клієнта
                             </div>
                         </a>
 
                         <a class="manage-tab" href="{{route('manage-clients')}}">
                             <div class="tab-title">
-                                Manage Clients
+                                Керувати клієнтами
                             </div>
                         </a>
 

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card" >
-                <div class="card-header">Management</div>
+                <div class="card-header">Керування</div>
 
                 <div class="card-body tabs-body">
                     @if (session('status'))
@@ -16,25 +16,25 @@
 
                         <a class="manage-tab" href="{{route("rooms")}}">
                             <div class="tab-title">
-                                Rooms
+                                Номери
                             </div>
                         </a>
 
                         <a class="manage-tab" href="{{route("booking")}}">
                             <div class="tab-title">
-                                Booking
+                                Бронювання
                             </div>
                         </a>
 
                         <a class="manage-tab" href="{{route("clients")}}">
                             <div class="tab-title">
-                                Clients
+                                Клієнти
                             </div>
                         </a>
 
                         <a class="manage-tab" href="{{route("statistics")}}">
                             <div class="tab-title">
-                                Statistics
+                                Статистика
                             </div>
                         </a>
 
