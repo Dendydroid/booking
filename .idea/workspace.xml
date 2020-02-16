@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d495217d-174f-4a22-a15b-d2f59668acb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/booking.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/booking.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/booking.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/booking.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/add_booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/add_booking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/add_client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/add_client.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/add_room.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/add_room.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/edit_room.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit_room.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage_bookings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage_bookings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage_clients.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage_clients.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage_rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage_rooms.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rooms.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/statistics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/statistics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +138,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581850965109</updated>
-      <workItem from="1581850968630" duration="22158000" />
+      <workItem from="1581850968630" duration="22426000" />
     </task>
     <servers />
   </component>
