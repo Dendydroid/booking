@@ -20,15 +20,7 @@
                             ])->first();
                         @endphp
 
-                        <form method="POST" action="/evict/{{$room->number}}">
-                            @csrf
-                            @if($booking instanceof \App\Booking)
-                                <input type="submit" class="btn btn-danger" value="Evict">
-                                @else
-                                <input type="submit" class="btn btn-light" value="Evict" disabled>
-                            @endif
-
-                        </form>
+                        
 
                     <form method="POST" action="{{ route('edit-room') }}">
                         @csrf
@@ -95,7 +87,40 @@
                             </div>
                         </div>
                     </form>
+                    <p class='m-0 pl-2 text-muted' style="font-size:1.2rem">Iсторія:</p>
+                         <table class="table w-100 m-0 p-0 table-striped table-hover">
+                                <tr>
+                                    <td>Клієнт</td>
+                                    <td>З</td>
+                                    <td>По</td>
+                                    <td>Виселити</td>
+                                </tr>
+                                @php
+                                    $bookings = \App\Booking::where('room_number', $room->number)->get(); 
+                                    $bookings = array_reverse($bookings->toArray());
+                                @endphp
+                                @foreach($bookings as $booking)
+                                @php
+                                    $client = \App\Client::where('id', $booking['client_id'])->first();
+                                @endphp
+                                    <tr>
+                                        <td>{{$client->name}} <small class="text-muted">({{$client->phone}})</small></td>
+                                        <td>{{$booking['night_start']}}</td>
+                                        <td>{{$booking['night_end']}}</td>
+                                        <td>
+                                            <form method="POST" action="/evict/{{$booking['id']}}">
+                                                @csrf
+                                                @if($booking['active'] == 1)
+                                                    <input type="submit" class="btn btn-danger" value="Виселити">
+                                                    @else
+                                                    <input type="submit" class="btn btn-light" value="Виселити" disabled>
+                                                @endif
 
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </table>
                 </div>
             </div>
         </div>

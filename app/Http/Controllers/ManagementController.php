@@ -71,26 +71,20 @@ class ManagementController extends Controller
         //@TODO Implement
     }
 
-    public function evict ($number)
+    public function evict ($id)
     {
-        $booking = \App\Booking::where([
-            ['room_number',"=",$number],
-            ['active',"=",1],
-        ])->first();
+        $booking = \App\Booking::where('id',$id)->first();
 
-        $room = Room::where("number", $number)->first();
 
-        if(!($booking instanceof Booking) || !($room instanceof Room)){
+        if(!($booking instanceof Booking)){
             abort(400);
         }
 
-        $room->status = self::DEFAULT_STATUS;
 
         $booking->active = 0;
 
         $booking->save();
 
-        $room->save();
 
         return back();
     }
@@ -128,18 +122,41 @@ class ManagementController extends Controller
     public function addBooking(Request $request)
     {
         $request->validate([
-            'number' => 'alpha_num|required|unique:bookings,room_number|max:255',
+            'number' => 'alpha_num|required|max:255',
             'client_id' => 'required|numeric',
-            'nights' => 'required|numeric|min:1',
+            'fromto' => 'required',
         ]);
 
 
         $bookingData = (object) $request->all();
 
+        $fromTo = explode(',', $bookingData->fromto);
+
+        if(!isset($fromTo[1])){
+            $fromTo[1] = $fromTo[0];
+        }
+        
+        $from = new \DateTime($fromTo[0]);
+
+        $to = new \DateTime($fromTo[1]);
+
+        $bookings = \App\Booking::all();
+
+        foreach ($bookings->toArray() as $key => $booking) {
+            if($booking['active'] == 1 && $booking['room_number'] === $bookingData->number){
+                $start = new \DateTime($booking['night_start']);
+                $end = new \DateTime($booking['night_end']);
+                if($start <= $to && $end >= $from){
+                    $request->session()->put('taken', 'Дати у вказаному дiапазонi зайнятi для вказаного номера');
+                    return back();
+                }
+            }
+        }
+
         $room = Room::where("number", $bookingData->number)->first();
 
         if(!($room instanceof Room)){
-            abort(400);
+            return abort(400);
         }
         $room->client_occupied_id = $bookingData->client_id;
         $room->status = self::OCCUPIED_STATUS;
@@ -149,7 +166,8 @@ class ManagementController extends Controller
         $booking = new Booking();
         $booking->room_number = $bookingData->number;
         $booking->client_id = $bookingData->client_id;
-        $booking->nights = (double)$bookingData->nights;
+        $booking->night_start = $fromTo[0];
+        $booking->night_end = $fromTo[1];
         $booking->active = self::DEFAULT_ACTIVE;
         $booking->save();
         return redirect(route('booking'));

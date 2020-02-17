@@ -18,7 +18,8 @@ class CreateBookingsTable extends Migration
             $table->string('room_number', 255);
             $table->integer('client_id')->nullable();
             $table->smallInteger('active')->nullable();
-            $table->bigInteger('nights');
+            $table->string('night_start', 64);
+            $table->string('night_end', 64);
             $table->timestamps();
         });
     }

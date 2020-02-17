@@ -32,24 +32,6 @@
                                    <div class="price">
                                        {{$room->price}} <small style="color:darkgreen">&#8372;</small><small class="text-muted">&nbsp;/&nbsp;за ніч</small>
                                    </div>
-                                   @php
-                                       $client = \App\Client::where('id',$room->client_occupied_id)->first();
-                                       $booking = \App\Booking::where([
-                                           ['client_id',"=",$room->client_occupied_id],
-                                           ['active',"=",1],
-                                           ['room_number','=',$room->number]
-                                        ])->first();
-                                   @endphp
-                                   @if($client instanceof \App\Client && $booking instanceof \App\Booking)
-                                       <div class="occupied small" style="color:darkred;text-align: center">
-                                           Зайнятий клієнтом {{$client->name}} <small class="text-muted">({{$client->phone}})</small>  <br>з <b>{{$booking->created_at}}</b><br>на <b>{{$booking->nights}}</b> ночей
-                                       </div>
-                                       @else
-                                   @endif
-                                   @php
-                                       $client = null;
-                                       $booking = null;
-                                   @endphp
                                </a>
 
                             @endforeach
@@ -58,8 +40,7 @@
                                 Список номерів порожній!
                             </p>
                         @endif
-
-
+                          
                     </div>
                 </div>
             </div>

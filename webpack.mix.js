@@ -16,3 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
     .styles([
         'resources/css/booking.css',
     ], 'public/css/booking.css');
+

@@ -10,7 +10,6 @@
     <title>NAU Hotel</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +18,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/booking.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
     <style>
         .card-header{
             background-color: rgba(112, 12, 255, 0.2) !important;
@@ -86,5 +86,10 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    @stack('custom-scripts')
 </body>
 </html>

@@ -24,9 +24,9 @@
 
                                     <select name="number" id="number" class="form-control @error('number') is-invalid @enderror" required autofocus style="cursor: pointer">
                                         @foreach($rooms as $room)
-                                            @if($room->status === "free")
+                                 
                                                 <option value="{{$room->number}}">{{$room->number}}</option>
-                                            @endif
+                                         
                                         @endforeach
                                     </select>
 
@@ -39,12 +39,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nights" class="col-md-4 col-form-label text-md-right">Кількість ночей</label>
+                                <label for="fromto" class="col-md-4 col-form-label text-md-right">З, По <small class="text-muted">(включно)</small></label>
 
                                 <div class="col-md-6">
-                                    <input id="nights" min="1" placeholder="1" type="nights" step="1" class="form-control @error('nights') is-invalid @enderror" name="nights" value="{{ old('nights') }}" required>
+                                    <input type="text" placeholder="Дати" class="datepicker-from-to form-control @error('fromto') is-invalid @enderror" name='fromto' value="{{ old('fromto') }}" required>
 
-                                    @error('nights')
+                                    @error('fromto')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -87,3 +87,36 @@
         </div>
     </div>
 @endsection
+@php
+    $forbiddenDates = [];
+    $bookings = App\Booking::all();
+    $nowDate = new \DateTime();
+    foreach($bookings->toArray() as $booking){
+        $startDate = new \DateTime($booking['night_start']);   
+        $endDate = new \DateTime($booking['night_end']); 
+        
+        if($nowDate>=$startDate && $nowDate<=endDate){
+
+        }
+    }
+@endphp
+@push('custom-scripts')
+@if(isset(request()->session()->all()['taken']))
+<script>
+alert('Дати у вказаному дiапазонi зайнятi для вказаного номера!');
+</script>
+@php
+session()->forget('taken');
+@endphp
+@endif
+<script type="text/javascript">
+
+
+
+        $('.datepicker-from-to').datepicker({
+            minDate:new Date(),
+            range:true  
+        })
+    </script>
+@endpush
+
